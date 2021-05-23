@@ -20,3 +20,29 @@ tsc greeting.ts --target es6
 
 
 이러한 것들을 Typscript 컴파일 파일을 설정해서 매번 컴파일 할때의 옵션을 주지 않아도 된다. 
+
+## tsconfig.json
+
+타입스크립트 파일의 설정은 이 파일로 할 수 있다. 
+작성은 다음과 같이 json형식으로 적는다. 
+
+```
+{
+  "include": [
+    "src/**/*.ts"
+  ],
+  "excludes": [
+    "node_modules"
+  ],
+  "compilerOptions": {
+    "module": "commonjs",
+    "rootDir": "src",
+    "outDir": "dist",
+    "target": "es5"
+    "sourceMap": true,
+    "removeComments": true,
+    "noImplicitAny": true
+  }
+}
+```
+위에서 처럼 어떤 파일을 include하는지 어떤것들은 exclude하는지 알 수가 있다. 이 파일은 React에서 Typescript를 사용할 때도 쓰이니 Typescript 공식 웹에서 어떻게 작성하는지 옵션들은 뭐가 있는지 알아보는 것이 좋다.
